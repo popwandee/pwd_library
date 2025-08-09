@@ -90,20 +90,20 @@ pip list | grep picamera2
 ### ปัญหากล้องไม่แสดงภาพ
 - ตรวจสอบการเชื่อมต่อของกล้อง
 - ตรวจสอบว่ากล้องเปิดใช้งานใน `/boot/config.txt`:
-  ```bash
+```bash
   sudo nano /boot/config.txt
-  ```
+```
   เพิ่มบรรทัด:
-  ```
+```
   start_x=1
   gpu_mem=128
-  ```
+```
 
 ### ปัญหา libcamera error
 - อัพเดตแพ็กเกจ:
-  ```bash
+```bash
   sudo apt update && sudo apt upgrade
-  ```
+```
 - ตรวจสอบว่ามีการใช้ Raspberry Pi OS เวอร์ชันล่าสุด
 
 ---
