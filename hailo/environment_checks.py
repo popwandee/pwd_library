@@ -1,0 +1,1 @@
+# Environment checks for Hailo such as HailoRT, TAPPAS, GStreamer,etc.

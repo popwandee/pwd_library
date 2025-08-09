@@ -1,0 +1,1 @@
+# Gstreamer elements usage for Hailo

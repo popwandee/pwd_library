@@ -1,0 +1,1 @@
+# Face detection with OpenCV and picamera2 and dual-stream

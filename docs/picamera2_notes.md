@@ -1,0 +1,1 @@
+# แนวคิด Picamera2, Configuration, Async, GUI, ML integration

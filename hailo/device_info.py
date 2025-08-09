@@ -1,0 +1,1 @@
+# HailoRT device info (hailortcli)

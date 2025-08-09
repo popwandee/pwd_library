@@ -1,0 +1,1 @@
+# แนวคิด GStreamer, การสร้าง pipeline, Custom elements

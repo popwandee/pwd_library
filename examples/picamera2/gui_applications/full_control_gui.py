@@ -1,0 +1,1 @@
+# GUI application with full control of picamera2

@@ -1,0 +1,1 @@
+# Object detection pipeline with YOLO Template

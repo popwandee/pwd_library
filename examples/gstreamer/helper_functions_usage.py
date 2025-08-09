@@ -1,0 +1,1 @@
+# GStreamer helper functions usage for Hailo (SOURCE_PIPELINE, INFER_PIPELINE, SINK_PIPELINE)
