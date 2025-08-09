@@ -44,3 +44,59 @@ git submodule update --init --recursive
 ```bash
 git submodule update --init --recursive
 ```
+นี่คือหนึ่งในคุณสมบัติหลักที่ทำให้ Submodule มีประโยชน์มาก เพราะมันยังคงสถานะเป็น Git Repository ที่สมบูรณ์อยู่ภายในโปรเจกต์หลักของเรา
+
+เมื่อคุณ cd เข้าไปในโฟลเดอร์ของ Submodule โฟลเดอร์นั้นจะทำงานเหมือน Git Repository ทั่วไปเลยครับ คุณสามารถแก้ไขโค้ด, สร้าง commit, และ push การเปลี่ยนแปลงไปยัง Remote Repository ของ Submodule ได้โดยตรง
+
+ผมจะอธิบายขั้นตอนการทำงานให้ละเอียดขึ้นดังนี้ครับ
+
+ขั้นตอนการแก้ไขและ Push โค้ดใน Submodule
+เข้าสู่โฟลเดอร์ Submodule:
+ใช้คำสั่ง cd เพื่อเข้าไปในโฟลเดอร์ของ Submodule ที่คุณต้องการแก้ไขโค้ด
+
+```bash
+cd <ชื่อโฟลเดอร์ submodule>
+```
+เช่น cd vendor/my-utility
+
+แก้ไขและ Commit โค้ด:
+ทำการแก้ไขไฟล์ใน Submodule ตามปกติ จากนั้นใช้คำสั่ง git add และ git commit ภายในโฟลเดอร์ของ Submodule นั้น
+
+```bash
+# (หลังจากแก้ไขไฟล์แล้ว)
+git add .
+git commit -m "Fix: แก้ไข bug ใน my-utility library"
+```
+Push การเปลี่ยนแปลงไปยัง Remote Repository ของ Submodule:
+ใช้คำสั่ง git push เพื่อส่ง commit ใหม่นี้ไปยัง Remote Repository ของ Submodule
+
+```bash
+git push origin main
+```
+ตอนนี้ Remote Repository ของ Submodule ก็จะมีการเปลี่ยนแปลงล่าสุดแล้วครับ
+
+อัปเดตโปรเจกต์หลักให้ชี้ไปที่ Commit ใหม่ของ Submodule:
+นี่คือขั้นตอนที่สำคัญที่สุดครับ! เมื่อคุณ cd กลับมาที่ root directory ของโปรเจกต์หลัก Git จะตรวจพบว่า Submodule ได้เปลี่ยนไปชี้ยัง Commit ใหม่
+คุณจะต้อง add และ commit การเปลี่ยนแปลงนี้ในโปรเจกต์หลักของคุณ เพื่อบันทึกว่า Submodule ตอนนี้อ้างอิงถึง Commit ที่คุณเพิ่ง push ไป
+
+```bash
+
+# กลับมาที่โปรเจกต์หลัก
+cd ..
+
+# ตรวจสอบสถานะ จะเห็นว่า submodule มีการเปลี่ยนแปลง
+git status
+
+# เพิ่มการเปลี่ยนแปลงและ commit
+git add <ชื่อโฟลเดอร์ submodule>
+git commit -m "Update: อัปเดต my-utility submodule ให้เป็นเวอร์ชันล่าสุด"
+
+# Push โปรเจกต์หลักขึ้น remote
+git push origin main
+```
+สรุป:
+
+คุณสามารถแก้ไขและ Push โค้ดได้โดยตรงจากภายในโฟลเดอร์ Submodule
+
+หลังจาก Push ใน Submodule เสร็จแล้ว คุณต้องกลับมา commit และ push ในโปรเจกต์หลักอีกครั้ง เพื่ออัปเดต reference (ตัวอ้างอิง) ที่ชี้ไปยัง Commit ล่าสุดของ Submodule
+นี่คือวิธีการทำงานที่ถูกต้องเพื่อให้โปรเจกต์หลักของคุณทราบว่า Submodule มีการเปลี่ยนแปลงครับ

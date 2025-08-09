@@ -93,27 +93,27 @@
 
 `journalctl` ใช้สำหรับดู Log ของระบบที่จัดการโดย `systemd`
 
-  * **ดู Log ทั้งหมด:** แสดง Log ทั้งหมดในระบบ
-    ```bash
-    journalctl
-    ```
-  * **ดู Log ของ Service เฉพาะ:** ดู Log ของ Service ที่ต้องการ
-    ```bash
-    journalctl -u <ชื่อ service>
-    ```
-  * **ดู Log แบบ Real-time:** แสดง Log ที่เข้ามาใหม่แบบต่อเนื่องเหมือนคำสั่ง `tail -f`
-    ```bash
-    journalctl -f
-    ```
-  * **ดู Log ตั้งแต่เวลาที่กำหนด:**
-    ```bash
-    journalctl --since "YYYY-MM-DD HH:MM:SS"
-    ```
-  * **จัดการ Log:** ตรวจสอบขนาดของ Log และลบ Log เก่าเพื่อประหยัดพื้นที่
-    ```bash
-    journalctl --disk-usage
-    sudo journalctl --vacuum-size=1G
-    ```
+* **ดู Log ทั้งหมด:** แสดง Log ทั้งหมดในระบบ
+```bash
+journalctl
+```
+* **ดู Log ของ Service เฉพาะ:** ดู Log ของ Service ที่ต้องการ
+```bash
+journalctl -u <ชื่อ service>
+```
+* **ดู Log แบบ Real-time:** แสดง Log ที่เข้ามาใหม่แบบต่อเนื่องเหมือนคำสั่ง `tail -f`
+```bash
+journalctl -f
+```
+* **ดู Log ตั้งแต่เวลาที่กำหนด:**
+```bash
+journalctl --since "YYYY-MM-DD HH:MM:SS"
+```
+* **จัดการ Log:** ตรวจสอบขนาดของ Log และลบ Log เก่าเพื่อประหยัดพื้นที่
+```bash
+journalctl --disk-usage
+sudo journalctl --vacuum-size=1G
+```
 
 ## 3\. แนวทางปฏิบัติที่ดีในการ Config Nginx, Gunicorn และ Systemd
 
@@ -121,23 +121,23 @@
 
 Nginx ทำหน้าที่เป็น Reverse Proxy เพื่อรับ Request จากผู้ใช้และส่งต่อไปยัง Gunicorn ช่วยเพิ่มประสิทธิภาพและความปลอดภัย
 
-  * **ตัวอย่างไฟล์ `server block` ของ Nginx**
-    ```nginx
-    server {
-        listen 80;
-        server_name your_domain.com www.your_domain.com;
+* **ตัวอย่างไฟล์ `server block` ของ Nginx**
+```nginx
+server {
+    listen 80;
+    server_name your_domain.com www.your_domain.com;
 
-        location / {
-            include proxy_params;
-            proxy_pass http://unix:/run/gunicorn.sock; # ส่ง Request ไปยัง Gunicorn ผ่าน Unix socket
-        }
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/run/gunicorn.sock; # ส่ง Request ไปยัง Gunicorn ผ่าน Unix socket
     }
-    ```
-  * **แนวทางปฏิบัติ:**
-      * ใช้ Nginx ในการจัดการ Request ที่เข้ามาทั้งหมด
-      * ใช้ Nginx ในการ Serve ไฟล์ Static เพื่อลดภาระของ Gunicorn
-      * ตั้งค่า `proxy_set_header` เพื่อให้ Gunicorn ทราบข้อมูล Request ที่ถูกต้อง เช่น `X-Forwarded-Proto` สำหรับ HTTPS
-      * ตรวจสอบความถูกต้องของ Configuration ด้วย `sudo nginx -t` และ `sudo systemctl restart nginx` หลังจากการแก้ไข
+}
+```
+* **แนวทางปฏิบัติ:**
+    * ใช้ Nginx ในการจัดการ Request ที่เข้ามาทั้งหมด
+    * ใช้ Nginx ในการ Serve ไฟล์ Static เพื่อลดภาระของ Gunicorn
+    * ตั้งค่า `proxy_set_header` เพื่อให้ Gunicorn ทราบข้อมูล Request ที่ถูกต้อง เช่น `X-Forwarded-Proto` สำหรับ HTTPS
+    * ตรวจสอบความถูกต้องของ Configuration ด้วย `sudo nginx -t` และ `sudo systemctl restart nginx` หลังจากการแก้ไข
 
 ### Gunicorn (Application Server)
 
@@ -348,6 +348,8 @@ git submodule update --init --recursive
 **ข้อควรระวัง:**
 
   * เมื่อทำการ Commit ใน Submodule และต้องการให้โปรเจกต์หลักอ้างอิงถึง Commit ล่าสุดนั้น ต้อง `git add` และ `git commit` ในโปรเจกต์หลักอีกครั้ง เพื่อบันทึกการเปลี่ยนแปลงของ Submodule
+
 # อัปเดต submodules
+```bash
 git submodule update --init --recursive
 ```
