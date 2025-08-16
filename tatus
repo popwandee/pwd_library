@@ -1,0 +1,111 @@
+[1mdiff --git a/docs/README.md b/docs/README.md[m
+[1mindex a3e22dd..c3d1dd0 100644[m
+[1m--- a/docs/README.md[m
+[1m+++ b/docs/README.md[m
+[36m@@ -1 +1,103 @@[m
+[31m-# สารบัญของเอกสารทั้งหมดใน docs[m
+\ No newline at end of file[m
+[32m+[m[32m# AI Camera Project Documentation[m
+[32m+[m
+[32m+[m[32m**เอกสารและคู่มือการใช้งานสำหรับโปรเจกต์ AI Camera**[m
+[32m+[m
+[32m+[m[32m## 📚 **Documentation Structure**[m
+[32m+[m
+[32m+[m[32m### 🎯 **Project-Specific Documentation**[m
+[32m+[m[32m- **[AI Camera Project](./projects/ai_camera/)** - เอกสารเฉพาะโปรเจกต์ AI Camera[m
+[32m+[m[32m- **[LPR Server Project](./projects/lpr_server/)** - เอกสารเฉพาะโปรเจกต์ LPR Server[m
+[32m+[m
+[32m+[m[32m### 🛠️ **Development Tools & Practices**[m
+[32m+[m[32m- **[Cursor AI Development](./development/cursor/)** - คู่มือการใช้งาน Cursor AI[m
+[32m+[m[32m- **[Git Workflow](./development/git/)** - แนวทางการใช้งาน Git[m
+[32m+[m[32m- **[Docker & Deployment](./development/docker/)** - การใช้งาน Docker และการ Deploy[m
+[32m+[m
+[32m+[m[32m### 🔧 **Technical Knowledge Base**[m
+[32m+[m[32m- **[Hardware & Sensors](./knowledge/hardware/)** - ข้อมูลฮาร์ดแวร์และเซ็นเซอร์[m
+[32m+[m[32m- **[AI & Computer Vision](./knowledge/ai_vision/)** - ความรู้ด้าน AI และ Computer Vision[m
+[32m+[m[32m- **[Network & Communication](./knowledge/network/)** - โปรโตคอลการสื่อสารและเครือข่าย[m
+[32m+[m[32m- **[System Administration](./knowledge/system/)** - การจัดการระบบและ Linux[m
+[32m+[m
+[32m+[m[32m### 📖 **Tutorials & Examples**[m
+[32m+[m[32m- **[Getting Started](./tutorials/getting_started/)** - คู่มือเริ่มต้นใช้งาน[m
+[32m+[m[32m- **[Code Examples](./tutorials/examples/)** - ตัวอย่างโค้ดและการใช้งาน[m
+[32m+[m[32m- **[Best Practices](./tutorials/best_practices/)** - แนวปฏิบัติที่ดี[m
+[32m+[m
+[32m+[m[32m### 📋 **Reference Materials**[m
+[32m+[m[32m- **[API Documentation](./reference/api/)** - เอกสาร API[m
+[32m+[m[32m- **[Configuration Files](./reference/config/)** - ไฟล์คอนฟิกต่างๆ[m
+[32m+[m[32m- **[Troubleshooting](./reference/troubleshooting/)** - การแก้ไขปัญหา[m
+[32m+[m
+[32m+[m[32m---[m
+[32m+[m
+[32m+[m[32m## 🚀 **Quick Start**[m
+[32m+[m
+[32m+[m[32m### สำหรับผู้เริ่มต้น[m
+[32m+[m[32m1. อ่าน [Getting Started Guide](./tutorials/getting_started/01_installation.md)[m
+[32m+[m[32m2. ศึกษา [Hardware Setup](./knowledge/hardware/01_raspberry_pi_setup.md)[m
+[32m+[m[32m3. ดู [Basic Examples](./tutorials/examples/01_basic_camera.md)[m
+[32m+[m
+[32m+[m[32m### สำหรับนักพัฒนา[m
+[32m+[m[32m1. ศึกษา [Cursor AI Setup](./development/cursor/01_cursor_basics.md)[m
+[32m+[m[32m2. อ่าน [Development Workflow](./development/git/01_workflow.md)[m
+[32m+[m[32m3. ดู [Best Practices](./tutorials/best_practices/01_code_quality.md)[m
+[32m+[m
+[32m+[m[32m### สำหรับการ Deploy[m
+[32m+[m[32m1. อ่าน [Deployment Guide](./development/docker/01_deployment.md)[m
+[32m+[m[32m2. ศึกษา [System Configuration](./knowledge/system/01_raspberry_pi_config.md)[m
+[32m+[m[32m3. ดู [Monitoring Setup](./knowledge/system/02_monitoring.md)[m
+[32m+[m
+[32m+[m[32m---[m
+[32m+[m
+[32m+[m[32m## 📁 **Directory Structure**[m
+[32m+[m
+[32m+[m[32m```[m
+[32m+[m[32mdocs/[m
+[32m+[m[32m├── projects/                    # Project-specific documentation[m
+[32m+[m[32m│   ├── ai_camera/              # AI Camera project docs[m
+[32m+[m[32m│   └── lpr_server/             # LPR Server project docs[m
+[32m+[m[32m├── development/                 # Development tools & practices[m
+[32m+[m[32m│   ├── cursor/                 # Cursor AI documentation[m
+[32m+[m[32m│   ├── git/                    # Git workflow & practices[m
+[32m+[m[32m│   └── docker/                 # Docker & deployment[m
+[32m+[m[32m├── knowledge/                   # Technical knowledge base[m
+[32m+[m[32m│   ├── hardware/               # Hardware & sensors[m
+[32m+[m[32m│   ├── ai_vision/              # AI & computer vision[m
+[32m+[m[32m│   ├── network/                # Network & communication[m
+[32m+[m[32m│   └── system/                 # System administration[m
+[32m+[m[32m├── tutorials/                   # Tutorials & examples[m
+[32m+[m[32m│   ├── getting_started/        # Getting started guides[m
+[32m+[m[32m│   ├── examples/               # Code examples[m
+[32m+[m[32m│   └── best_practices/         # Best practices[m
+[32m+[m[32m└── reference/                   # Reference materials[m
+[32m+[m[32m    ├── api/                    # API documentation[m
+[32m+[m[32m    ├── config/                 # Configuration files[m
+[32m+[m[32m    └── troubleshooting/        # Troubleshooting guides[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32m---[m
+[32m+[m
+[32m+[m[32m## 🔄 **Documentation Maintenance**[m
+[32m+[m
+[32m+[m[32m### การอัพเดทเอกสาร[m
+[32m+[m[32m- เอกสารจะถูกอัพเดทเมื่อมีการเปลี่ยนแปลงในโค้ด[m
+[32m+[m[32m- ใช้ [Git Workflow](./development/git/01_workflow.md) สำหรับการอัพเดท[m
+[32m+[m[32m- ทดสอบเอกสารก่อนเผยแพร่[m
+[32m+[m
+[32m+[m[32m### การแจ้งปัญหา[m
+[32m+[m[32m- หากพบข้อผิดพลาดในเอกสาร กรุณาแจ้งผ่าน Issue[m
+[32m+[m[32m- ใช้ template "Documentation Bug" สำหรับรายงานปัญหา[m
+[32m+[m
+[32m+[m[32m---[m
+[32m+[m
+[32m+[m[32m## 📞 **Support**[m
+[32m+[m
+[32m+[m[32m- **Technical Issues**: ดู [Troubleshooting Guide](./reference/troubleshooting/01_common_issues.md)[m
+[32m+[m[32m- **Development Questions**: อ่าน [Development FAQ](./reference/faq/01_development.md)[m
+[32m+[m[32m- **Hardware Issues**: ดู [Hardware Troubleshooting](./knowledge/hardware/05_troubleshooting.md)[m
+[32m+[m
+[32m+[m[32m---[m
+[32m+[m
+[32m+[m[32m**Last Updated**: December 2024[m[41m  [m
+[32m+[m[32m**Version**: 2.0.0[m
+\ No newline at end of file[m
