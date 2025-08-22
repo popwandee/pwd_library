@@ -119,5 +119,24 @@
 - ใช้ `ExecStop=` หากต้องการควบคุมวิธีหยุด service
 
 ```
+You can list and filter systemd services on a Raspberry Pi (running Raspberry Pi OS), Debian, or Ubuntu using the systemctl command. Here are the commands to list all services and to display only the enabled and active ones.
+List All Services
+To list all loaded services on your system, regardless of their state, use the list-units subcommand with the --type=service option.
+systemctl list-units --type=service
+
+The output will show columns for the unit's name, whether its configuration is loaded, its high-level activation state (ACTIVE), and its low-level activation state (SUB).
+Display Enabled Services
+Enabled services are those configured to start automatically at boot. To list these, use list-unit-files with the --state=enabled option.
+systemctl list-unit-files --type=service --state=enabled
+
+The output will show the unit file's name and its state, which should be enabled for all listed services.
+Display Active/Running Services
+Active services are currently running. To display them, use the list-units subcommand with the --state=active option.
+systemctl list-units --type=service --state=active
+
+This command shows units in an active state. To be more specific and only list services that are actively running, you can use the --state=running option.
+systemctl list-units --type=service --state=running
+
+The output for these commands will show the UNIT name, LOAD status, ACTIVE status, SUB status (e.g., running or exited), and a brief description.
 
 ---
